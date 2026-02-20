@@ -11,13 +11,13 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
 
       - name: Compile (no deps)
         run: rm -rf out && mkdir -p out && javac -encoding UTF-8 -d out src/Main.java
 
-      - name: Golden case: GO
+      - name: Golden case (GO)
         run: java -cp out Main golden/v1/go
 
-      - name: Golden case: NO_GO
+      - name: Golden case (NO_GO)
         run: java -cp out Main golden/v1/nogo
