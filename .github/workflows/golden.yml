@@ -1,6 +1,8 @@
 ﻿name: Golden Run verification
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   golden-run:
@@ -20,13 +22,7 @@ jobs:
           javac -encoding UTF-8 -d out src/Main.java
 
       - name: Golden case (GO)
-        run: |
-          echo "Current dir: $(pwd)"
-          ls -la golden/v1/go/
-          java -cp out Main golden/v1/go
+        run: java -cp out Main golden/v1/go
 
       - name: Golden case (NO_GO)
-        run: |
-          echo "Current dir: $(pwd)"
-          ls -la golden/v1/nogo/
-          java -cp out Main golden/v1/nogo
+        run: java -cp out Main golden/v1/nogo
