@@ -1,8 +1,6 @@
-# Golden Run artifacts must be byte-identical across OS
-# Prevent Git from normalizing line endings
-golden/** text eol=lf
-
-* text=auto
+﻿* text=auto
 *.md text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
+golden/** text eol=lf
+.github/workflows/** text eol=lf
