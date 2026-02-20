@@ -1,3 +1,4 @@
 # Golden Run artifacts must be byte-identical across OS
 # Prevent Git from normalizing line endings
-golden/** -text
+golden/** text eol=lf
+
